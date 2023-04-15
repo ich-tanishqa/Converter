@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,10 +8,9 @@
     <link rel="stylesheet" href="/css/styles.css">
     <title>converter</title>
 </head>
-
 <body>
     <div class="top-container">
-        <form action="/convert-mp3" method="POST" id="form">
+        <form action="/convert-mp3" method="POST" id="form"></form>
             <h1><i class="fa-brands fa-youtube" style="color: #0d0c0c;"></i>YOUTUBE 2 MP3 CONVERTER</h1>
             <h4>Enter the video ID</h4>
             <input type="text" name="videoID" placeholder="Video ID"><button id="convert-btn">Convert</button>
@@ -20,20 +18,17 @@
     </div>
 
     <div class="bottom-container">
-        <% if (typeof success !="undefined" && success) {%>
+        <% if (typeof success != "undefined" && success) {%>
             <div class="success">
-
+                <!-- <p><%song_title%></p> -->
                 <a href="<%= song_link%>"><button id="download-btn">DOWLOAD NOW</button></a>
-            </div>
-            <% } else if (typeof success !="undefined" && !success) {%>
-                <div class="error">
-                    <p>
-                        <%= message %>
-                    </p>
                 </div>
-                <% } %>
+                <% } else if (typeof success != "undefined" && !success) {%>
+                    <div class="error">
+                        <p><%= message %></p>
+                    </div>
+        <% } %>
     </div>
 
 </body>
-
 </html>
